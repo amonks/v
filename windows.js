@@ -3,13 +3,7 @@
 define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
   'use strict'
 
-  let Windows = function () { EventEmitter.call(this) }
-  Windows.prototype = Object.create(EventEmitter.prototype)
-  Windows.prototype.constructor = Windows
-
-  let control_window
-
-  Windows.prototype.init = function () {
+  let Windows = function () {
     control_window = window.open('empty.html')
 
     let that = this
@@ -17,7 +11,11 @@ define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
       that.emitEvent('ready')
     }
   }
+  Windows.prototype = Object.create(EventEmitter.prototype)
+  Windows.prototype.constructor = Windows
 
+  let control_window
+  
   Windows.prototype.add = function (thing) {
     $(control_window.document.body).append(thing)
     this.emitEvent('added')

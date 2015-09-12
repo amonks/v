@@ -3,13 +3,8 @@
 define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
   'use strict'
 
-  let Panels = function () { EventEmitter.call(this) }
-  Panels.prototype = Object.create(EventEmitter.prototype)
-  Panels.prototype.constructor = Panels
-
-  let control_panel
-
-  Panels.prototype.init = function () {
+  let Panels = function () {
+    EventEmitter.call(this)
     control_panel = $(window.document.body).append($('<div id="control-panel">'))
 
     let that = this
@@ -18,6 +13,10 @@ define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
       that.emitEvent('ready')
     }, 0)
   }
+  Panels.prototype = Object.create(EventEmitter.prototype)
+  Panels.prototype.constructor = Panels
+
+  let control_panel
 
   Panels.prototype.add = function (thing) {
     control_panel.append(thing)
