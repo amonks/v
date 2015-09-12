@@ -7,7 +7,7 @@ define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
     EventEmitter.call(this)
     let that = this
 
-    ui.add($(`<div id="${id}"><h1>${id}</h1>`))
+    ui.add($(`<div id="${id}" class="well"><h1>${id}</h1>`))
     // requeue to wait for ready listener
     setTimeout(function () {
       that.emitEvent('ready')

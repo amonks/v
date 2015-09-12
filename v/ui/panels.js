@@ -1,10 +1,10 @@
 /* global define */
 
-define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
+define(['v/ui/base', 'jquery'], function (BaseUI, $) {
   'use strict'
 
   let Panels = function () {
-    EventEmitter.call(this)
+    BaseUI.call(this)
     control_panel = $(window.document.body).append($('<div id="control-panel">'))
 
     let that = this
@@ -13,7 +13,7 @@ define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
       that.emitEvent('ready')
     }, 0)
   }
-  Panels.prototype = Object.create(EventEmitter.prototype)
+  Panels.prototype = Object.create(BaseUI.prototype)
   Panels.prototype.constructor = Panels
 
   let control_panel
