@@ -10,8 +10,9 @@ define(['v/ui/base', 'jquery'], function (BaseUI, $) {
     let that = this
     // requeue to wait for ready listener
     setTimeout(function () {
+      console.log('ready')
       that.emitEvent('ready')
-    }, 0)
+    }, 100)
   }
   Panels.prototype = Object.create(BaseUI.prototype)
   Panels.prototype.constructor = Panels

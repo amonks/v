@@ -1,13 +1,15 @@
 /* global define */
 
-define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
+define(['EventEmitter', 'jquery', 'hbs!v/control/control'], function (EventEmitter, $, controlHbs) {
   'use strict'
 
   let Control = function (ui, id, options) {
+    console.log('called control')
     EventEmitter.call(this)
     let that = this
-
-    ui.add($(`<div id="${id}" class="well"><h1>${id}</h1>`))
+    let x = controlHbs('hello')
+    console.log(x)
+    ui.add($(controlHbs({id: id})))
     // requeue to wait for ready listener
     setTimeout(function () {
       that.emitEvent('ready')

@@ -8,8 +8,10 @@ define(['v/ui/base', 'jquery'], function (BaseUI, $) {
 
     let that = this
     control_window.onload = function () {
-      $(control_window.document.head).append($('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">'))
-      that.emitEvent('ready')
+      setTimeout(function () {
+        $(control_window.document.head).append($('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">'))
+        that.emitEvent('ready')
+      }, 200)
     }
   }
   Windows.prototype = Object.create(BaseUI.prototype)

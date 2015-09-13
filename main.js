@@ -1,9 +1,12 @@
-require(['jquery', 'v/ui/windows', 'v/control'], function ($, ui, Control) {
+require(['jquery', 'v/ui/windows', 'v/control/control'], function ($, ui, Control) {
   'use strict'
 
+  let controls = []
+
   ui.on('ready', function () {
-    let brightness = new Control(ui, 'brightness')
-    let tint = new Control(ui, 'tint')
+    console.log('got ready')
+    controls.push(new Control(ui, 'brightness'))
+    controls.push(new Control(ui, 'tint'))
   })
   ui.on('added', function () {
     console.log('msg rec')
