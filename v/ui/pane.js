@@ -8,7 +8,6 @@ define(['v/ui/base', 'jquery'], function (BaseUI, $) {
 
     this.element = $(`<div id=${id}>`)
     win.add(this.element)
-    console.log('set pane element to ', this.element)
 
     let that = this
     setTimeout(function () {

@@ -13,7 +13,6 @@ define(['EventEmitter', 'jquery'], function (EventEmitter, $) {
   BaseUI.prototype.element = $('<div>')
 
   BaseUI.prototype.add = function (thing) {
-    console.log('adding', thing, 'to', this.element)
     if (thing instanceof BaseUI) {
       console.log('adding baseui')
       this.children.push(thing)
