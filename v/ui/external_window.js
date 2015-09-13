@@ -6,7 +6,7 @@ define(['v/ui/base', 'jquery'], function (BaseUI, $) {
   let ExternalWindow = function (id) {
     BaseUI.call(this)
 
-    this.window = window.open('404', id)
+    this.window = window.open('empty', id)
 
     let that = this
     this.window.onload = function () {
