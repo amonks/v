@@ -3,11 +3,10 @@
 define(['v/ui/base', 'jquery'], function (BaseUI, $) {
   'use strict'
 
-  let Pane = function (id, win) {
+  let Pane = function (id) {
     BaseUI.call(this)
 
     this.element = $(`<div id=${id}>`)
-    win.add(this.element)
 
     let that = this
     setTimeout(function () {
