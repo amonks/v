@@ -9,6 +9,7 @@ define(function (require) {
   let Pane = function (id) {
     BaseUI.call(this)
 
+    this.id = id
     this.element = $(`<div id=${id} class='pane container-fluid'>`)
 
     let that = this
@@ -36,8 +37,14 @@ define(function (require) {
       console.log(`just recalculated tiling for ${pane_count} children of`, thing)
     })
   }
+
   Pane.prototype = Object.create(BaseUI.prototype)
   Pane.prototype.constructor = Pane
+
+  Pane.prototype.render = function () {
+    this.element.html(`<div id=${this.id} class='pane container-fluid'>`)
+    this.render_children()
+  }
 
   return Pane
 })

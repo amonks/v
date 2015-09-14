@@ -11,8 +11,7 @@ define(function (require) {
 
     this.win = window
     this.element = $('#v')
-    console.log(this)
-    this.set_up()
+    this.render()
   }
   PrimaryWindow.prototype = Object.create(BaseWindow.prototype)
   PrimaryWindow.prototype.constructor = PrimaryWindow

@@ -6,12 +6,11 @@ define(function (require) {
   let $ = require('jquery')
   let BaseUI = require('v/ui/base')
 
-  let value
-
   let Control = function (id, opts) {
     BaseUI.call(this)
+
     this.set(opts.initial)
-    this.element = $(`<div id="${id}">${value}</div>`)
+    this.element = $(`<div id="${id}">${this.get()}</div>`)
   }
 
   Control.prototype = Object.create(BaseUI.prototype)
@@ -20,12 +19,12 @@ define(function (require) {
   Control.prototype.children = null
 
   Control.prototype.get = function () {
-    return value
+    return this.value
   }
 
   Control.prototype.set = function (v) {
     if (this.validate(v)) {
-      value = v
+      this.value = v
       this.emit('update')
     }
   }

@@ -13,8 +13,8 @@ define(function (require) {
 
     let that = this
     this.win.onload = function () {
-      that.element = $(that.win.document.body)
-      that.set_up()
+      that.element = $(that.win.document.body).append('<div id="v" class="container">')
+      that.render()
     }
   }
   ExternalWindow.prototype = Object.create(BaseWindow.prototype)

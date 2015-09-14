@@ -21,5 +21,10 @@ define(function (require) {
   Panel.prototype = Object.create(BaseUI.prototype)
   Panel.prototype.constructor = Panel
 
+  Panel.prototype.render = function () {
+    this.element.html(panel_hbs())
+    this.render_children()
+  }
+
   return Panel
 })

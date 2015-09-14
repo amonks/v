@@ -9,7 +9,10 @@ define(function (require) {
   let Pane = require('v/ui/pane/pane')
   let Panel = require('v/ui/panel/panel')
   let StringControl = require('vj/control/string')
+  let OutputSpan = require('vj/output/span')
+  let BaseUI = require('v/ui/base')
 
+  let text_control = new StringControl('text', {initial: 'some text'})
   return function () {
     let control_window = new ExternalWindow('control_window')
 
@@ -22,8 +25,7 @@ define(function (require) {
         center.add(panel)
 
         panel.on('ready', function () {
-          let text = new StringControl('text', {initial: 'some text'})
-          panel.add(text)
+          panel.add(text_control)
         })
       })
     })
@@ -39,7 +41,10 @@ define(function (require) {
         left.add(panel)
 
         panel.on('ready', function () {
-          panel.add($('<h1>hello (left)</h1>'))
+          let h1 = new BaseUI('<h1></h1>')
+          panel.add(h1)
+          let string_output = new OutputSpan(text_control)
+          string_output.add_to(h1)
         })
       })
 
