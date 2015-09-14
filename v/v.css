@@ -1,0 +1,11 @@
+.pane {
+  border: solid 1px;
+  background: green;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  float: left; }
+
+.container-fluid {
+  padding: 0; }

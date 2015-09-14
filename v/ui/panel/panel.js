@@ -1,7 +1,11 @@
 /* global define */
 
-define(['v/ui/base', 'jquery', 'hbs!v/ui/panel'], function (BaseUI, $, panel_hbs) {
+define(function (require) {
   'use strict'
+
+  let BaseUI = require('v/ui/base')
+  let $ = require('jquery')
+  let panel_hbs = require('hbs!v/ui/panel/panel')
 
   let Panel = function () {
     BaseUI.call(this)
@@ -12,7 +16,7 @@ define(['v/ui/base', 'jquery', 'hbs!v/ui/panel'], function (BaseUI, $, panel_hbs
     setTimeout(function () {
       console.log('panel ready')
       that.emitEvent('ready')
-    }, 100)
+    }, 0)
   }
   Panel.prototype = Object.create(BaseUI.prototype)
   Panel.prototype.constructor = Panel

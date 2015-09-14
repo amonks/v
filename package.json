@@ -1,0 +1,21 @@
+{
+  "name": "v",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amonks/v.git"
+  },
+  "author": "Andrew Monks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amonks/v/issues"
+  },
+  "homepage": "https://github.com/amonks/v#readme",
+  "dependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.1"
+  }
+}

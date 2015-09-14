@@ -1,7 +1,10 @@
 /* global define */
 
-define(['v/ui/base', 'jquery'], function (BaseUI, $) {
+define(function (require) {
   'use strict'
+
+  let $ = require('jquery')
+  let BaseUI = require('v/ui/base')
 
   let value
 
